@@ -32,7 +32,7 @@ export default {
   },
   data: () => ({
     fields: {},
-    show: true
+    show: false
   }),
   computed: {
     ...mapGetters([
