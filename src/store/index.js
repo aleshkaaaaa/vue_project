@@ -31,17 +31,17 @@ export default new Vuex.Store({
           resolve([
             {
               date: '28.03.2020',
-              category: 'Food',
+              type: 'Food',
               amount: 169
             },
             {
               date: '24.03.2020',
-              category: 'Transport',
+              type: 'Transport',
               amount: 360
             },
             {
               date: '24.03.2020',
-              category: 'Food',
+              type: 'Food',
               amount: 532
             }
           ])

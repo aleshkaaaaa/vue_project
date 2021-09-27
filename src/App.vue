@@ -4,10 +4,18 @@
       <div class="header">My Personal costs</div>
     </header>
     <main>
-      Total Price : {{ getFPV }}
-      <add-payment-form @emitName="methodName" :categoryList="getCategoryList"/>
-      <PaymentDisplay show-items :items="paymentsList" />
-      {{ fields }}
+      <div>
+        <br>
+        <button @click="show=!show">ADD NEW COST +</button>
+      </div>
+      <div>
+        <br>
+          <add-payment-form v-if="show" @emitName="methodName" :categoryList="getCategoryList"/>
+        <br>
+        <div class="about"><h4>#</h4><h4>Date</h4><h4>Category</h4><h4>Value</h4></div>
+        <hr class="hr">
+        <PaymentDisplay show-items :items="paymentsList" />
+      </div>
     </main>
   </div>
 </template>
@@ -23,7 +31,8 @@ export default {
     AddPaymentForm
   },
   data: () => ({
-    fields: {}
+    fields: {},
+    show: true
   }),
   computed: {
     ...mapGetters([
@@ -62,6 +71,15 @@ export default {
   margin-top: 60px;
 }
 .header {
-  color: red;
+  font-size: 30px;
 }
+.hide {
+  display: none;
+}
+.about {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px 0 150px;
+}
+
 </style>

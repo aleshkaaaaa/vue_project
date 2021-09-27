@@ -39,9 +39,10 @@ export default {
   methods: {
     onSaveClick () {
       const data = {
-        amount: Number(this.amount),
+        date: this.date || this.getCurrentDate,
         type: this.type,
-        date: this.date || this.getCurrentDate
+        amount: Number(this.amount)
+
       }
       this.$emit('emitName', data)
     }
